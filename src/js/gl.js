@@ -135,10 +135,12 @@ export function createGl(game) {
 
   // Render function to be called every frame
   const render = (uDelta) => {
-    // Update viewport
+    // Update canvas size only when it actually changes to avoid unnecessary resets
+    if (gl.canvas.width !== window.innerWidth || gl.canvas.height !== window.innerHeight) {
+      gl.canvas.width = window.innerWidth;
+      gl.canvas.height = window.innerHeight;
+    }
     gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-    gl.canvas.width = window.innerWidth;
-    gl.canvas.height = window.innerHeight;
 
     // Update textures
     gl.bindTexture(gl.TEXTURE_2D, texture2);

@@ -32,7 +32,7 @@ export function createBoxRenderer(game) {
 
   const vertexShaderSource = `#version 300 es
 
-  precision mediump float;
+  precision highp float;
 
   in vec3 ${_aVertex};
   in vec3 ${_aTranslation};
