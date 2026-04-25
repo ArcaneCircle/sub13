@@ -21,7 +21,7 @@ export function createRace(game) {
     if (!race.started || race.finished) {
       if (game.boxRenderer.timeMod > 0) {
         game.boxRenderer.timeMod = Math.max(0, game.boxRenderer.timeMod - (delta * 0.0005));
-        game.player.level *= 0.9;
+        game.player.level = Math.floor(game.player.level * 0.9);
       }
       return;
     }

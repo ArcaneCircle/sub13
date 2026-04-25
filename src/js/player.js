@@ -30,6 +30,8 @@ export function createPlayer(game) {
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   function playFlamSound(playerLevel, value) {
+    if (!Number.isFinite(playerLevel) || !Number.isFinite(value) || value <= 0) return;
+    playerLevel = Math.floor(playerLevel);
     const flamInterval = 0.04;
     const volumeReduction = 0.1;
 
@@ -57,6 +59,7 @@ export function createPlayer(game) {
       for (let i = playerLevel; i < totalLevel; i++) {
         const levelIndex = i % notePattern.length;
         const baseFrequency = notePattern[levelIndex];
+        if (!Number.isFinite(baseFrequency)) continue;
 
         const oscillator1 = audioCtx.createOscillator();
         const oscillator2 = audioCtx.createOscillator();
@@ -94,6 +97,7 @@ export function createPlayer(game) {
       for (let i = 0; i < value; i++) {
         const levelIndex = Math.max(11 - i, 0);
         const baseFrequency = notePattern[levelIndex];
+        if (!Number.isFinite(baseFrequency)) continue;
 
         const oscillator1 = audioCtx.createOscillator();
         const oscillator2 = audioCtx.createOscillator();
