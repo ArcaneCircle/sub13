@@ -1,27 +1,15 @@
 {
-  "name": "js13k",
-  "version": "1.0.0",
-  "description": "JS13K entry",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
     "start": "vite --port 3000",
-    "emulator": "concurrently \"npm start\" \"webxdc-dev run http://localhost:3000\"",
     "fix": "prettier --write .",
     "check": "prettier --check .",
     "build": "vite build"
   },
-  "keywords": [
-    "game",
-    "js",
-    "js13k"
-  ],
-  "author": "Charlie Norin",
-  "license": "ISC",
   "devDependencies": {
-    "concurrently": "^9.0.1",
-    "prettier": "^3.3.3",
-    "vite": "^5.4.8",
-    "webxdc-dev": "^0.17.0",
-    "webxdc-vite-plugins": "github:webxdc/webxdc-vite-plugins#0.3.0"
+    "@webxdc/vite-plugins": "latest",
+    "prettier": "latest",
+    "vite": "latest"
   }
 }
