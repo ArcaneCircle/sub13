@@ -116,5 +116,4 @@ function main() {
 }
 
 
-document.getElementById('body').classList.remove("hidden");
 main();
