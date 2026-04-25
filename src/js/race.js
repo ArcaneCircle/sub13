@@ -30,18 +30,19 @@ export function createRace(game) {
       game.boxRenderer.timeMod = Math.min(1, game.boxRenderer.timeMod + (delta * 0.0005));
     }
 
-    race.timeLeft -= (delta / 1000);
-    if (race.timeLeft < 0) {
-      race.timeLeft = 0;
-      race.finished = true;
-      race.started = false;
-    }
-
     race.placement = 5;
     for (var distance of game.opponents.distances) {
       if (distance < 0) {
         race.placement -= 1;
       }
+    }
+
+    race.timeLeft -= (delta / 1000);
+    if (race.timeLeft < 0) {
+      race.timeLeft = 0;
+      race.finished = true;
+      race.started = false;
+      window.highscores.setScore(-(race.placement));
     }
   };
 

@@ -1,3 +1,5 @@
+import "@webxdc/highscores";
+
 import {createGl} from "./gl.js";
 import {createMusic} from "./music.js";
 import {createColors} from "./colors.js";
@@ -116,4 +118,23 @@ function main() {
 }
 
 
-main();
+window.highscores.init({
+    getAnnouncement: (name, score) => {
+        score = -score;
+        let pos;
+        if (score === 1) {
+            pos = "1st";
+        } else if (score === 2) {
+            pos = "2nd";
+        } else if (score === 3) {
+            pos = "3rd";
+        } else {
+            pos = score + "th";
+        }
+        return `${name} finished ${pos}!`;
+    },
+    getInitialScore: () => -10,
+}).then(() => {
+    document.getElementById('body').classList.remove("hidden");
+    main();
+});
