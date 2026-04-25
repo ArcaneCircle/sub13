@@ -1,4 +1,5 @@
 import "@webxdc/highscores";
+import '@fontsource-variable/orbitron/wght.css';
 
 import {createGl} from "./gl.js";
 import {createMusic} from "./music.js";

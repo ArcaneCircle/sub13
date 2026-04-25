@@ -1,5 +1,6 @@
 body,
 html {
+  font-family: 'Orbitron Variable', sans-serif;
   transition: background-color 4s;
   background-color: #fff;
   margin: 0;
@@ -46,7 +47,7 @@ canvas {
   position: relative;
   width: 0;
   height: 0;
-  letter-spacing: -3vw;
+  letter-spacing: -1vw;
   color: #fff;
   top: -24vh;
   left: -4vh;
@@ -62,7 +63,7 @@ canvas {
 }
 
 #log1 {
-  left: -15vw;
+  left: -25vw;
   text-shadow: 0 0 2vw #444;
 }
 
@@ -120,7 +121,6 @@ canvas {
 }
 
 .t {
-  font-family: Arial;
   font-size: 1.5vh;
 }
 
@@ -174,7 +174,6 @@ canvas {
   transition: all 200ms ease-in;
   color: #fff;
   font-weight: bold;
-  font-family: Arial;
   text-align: center;
 }
 
